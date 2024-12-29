@@ -1,0 +1,586 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #223d50, #144e2c);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #ffffff;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #ffffff !important;
+}
+
+.nav-link {
+  color: #ffffff !important;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3498db;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+}
+
+
+.logo {
+  font-family: 'Georgia', serif;
+  font-size: 27px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 1px 20px 10px 2px;
+  border-image: linear-gradient(45deg, #3498db, #2ecc71);
+  border-image-slice: 1;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  font-family: 'Georgia', serif;
+  font-size: 27px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #3a7daa, #36c471);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 1px 20px 10px 2px;
+  border-image-slice: 1;
+  transition: transform 0.3s ease;
+}
+
+.cart-badge .badge {
+  font-size: 0.6rem;
+  padding: 0.2rem 0.4rem;
+}
+
+/* Sign In Button */
+.sign-in-btn {
+  transition: all 0.3s ease;
+}
+
+.sign-in-btn:hover {
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  border-color: transparent;
+}
+
+/* Sidebar Panel */
+.sidebar-panel {
+  width: 20vw!important;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+}
+
+.offcanvas-header h5 {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.sidebar-menu {
+  padding: 1rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #3498db;
+}
+
+.sidebar-item i {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+/* Animation classes */
+.bounce {
+  animation: bounceEffect 0.3s ease-in-out;
+}
+
+@keyframes bounceEffect {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Notification styles */
+.cart-notification,
+.search-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  z-index: 1050;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.cart-notification.show,
+.search-notification.show {
+  transform: translateX(0);
+}
+
+.cart-notification.hide,
+.search-notification.hide {
+  transform: translateX(100%);
+}
+
+/* Hero Carousel */
+#heroCarousel .carousel-item img {
+  height: 100vh;
+  object-fit:fill ;
+  filter: brightness(70%);
+}
+
+.carousel-caption.featured-slide {
+  background:linear-gradient(45deg, #a5adb2, #787b79);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.animated-text {
+  font-family: fantasy, 'Times New Roman', Times, serif;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.carousel-item.active .animated-text {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.carousel-caption{
+  position: absolute;
+  right: 15%;
+  bottom: 0.10rem;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Section Large Text */
+.section-large-text{
+  font-size: 7vw;
+  color: rgba(255,255,255,0.1);
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.5s, transform 0.5s;
+}
+
+.section-large-text:hover{
+  color: rgba(255,255,255,0.5);
+  transform: scale(1.05);
+}
+/* #Featured-Product-Heading{
+  font-size: 7vw;
+  color: rgba(255,255,255,0.1);
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.5s, transform 0.5s;
+  text-align: center;
+  padding: 30px; 
+}
+#Featured-Product-Heading:hover{
+  color: rgba(255,255,255,0.5);
+  transform: scale(1.05);
+} */
+
+/* Featured Products Section */
+#featured-products {
+  background: rgba(255,255,255,0.05);
+  padding: 50px 0;
+}
+
+.featured-product-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 35px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.featured-product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.featured-product-card .product-image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.featured-product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.featured-product-card:hover img {
+  transform: scale(1.1);
+}
+
+.featured-product-card .product-details {
+  padding: 15px;
+  text-align: center;
+  background: rgba(255,255,255,0.5);
+}
+
+.featured-product-card .product-details h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.featured-product-card .product-details p {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 15px;
+}
+
+/* Product Collection Sections */
+#shirts-section,
+#watches-section,
+#perfumes-section {
+  background: linear-gradient(45deg, #223d50, #144e2c);
+  padding: 50px 0;
+}
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.collection-card:hover img {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.collection-card:hover .card-overlay {
+  bottom: 0;
+}
+
+.card-overlay h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card-overlay p {
+  color: #3498db;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.carousel {
+  padding: 20px 0;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+/* Animation classes */
+[data-aos] {
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+.fade-up {
+  transform: translateY(30px);
+}
+
+.fade-up.aos-animate {
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.collection-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  border: none;
+  padding: 8px 20px;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* new changes */
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  /* height: 300px;
+  width: 250px; */
+  width: 260px;;
+}
+
+.collection-card img {
+  width: 108%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  /* padding-right: 50px; */
+}
+
+.collection-card:hover img {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.collection-card:hover .card-overlay {
+  bottom: 0;
+}
+
+.card-overlay h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card-overlay p {
+  color: #3498db;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.carousel {
+  padding: 20px 0;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+/* Animation classes */
+[data-aos] {
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+.fade-up {
+  transform: translateY(30px);
+}
+
+.fade-up.aos-animate {
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.collection-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  border: none;
+  padding: 8px 20px;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer .social-icons a:hover {
+  color: #6A5AFF !important;
+}
+
+
+/* Login/signUp page design setting */
+
+.modal-dialog {
+  max-width: 35vw !important;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  height: 60vh;
+  overflow-y: auto;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login-container .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.login-container .form {
+  text-align: left;
+}
+
+.login-container .form-control {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.login-container .btn-close {
+  filter: none;
+}
+
+.hidden {
+  display: none;
+}
+/* Update text colors */
+.login-container h2,
+.login-container h3,
+.login-container label,
+.login-container p {
+    color: #000;
+    font-weight: 500;
+}
+
+.login-container input::placeholder {
+    color: #666;
+}
+
+/* Ensure form visibility */
+#loginForm,
+#signupForm {
+    transition: display 0.3s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-large-text {
+      font-size: 12vw;
+  }
+
+  .featured-product-card img {
+      height: 250px;
+  }
+}

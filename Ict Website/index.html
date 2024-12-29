@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Marketplace</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid px-4">
+            <a href="#heroCarousel" class="navbar-brand logo">Dress.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#featured-products">Featured Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#container_shirts">Dress Shirts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#container_pants">Dress Pants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#container_shoes">Dress Shoes</a>
+                    </li>
+                </ul>
+                <form class="d-flex align-items-center search-form">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <div class="cart-badge ms-3">
+                    <button class="btn btn-outline-light position-relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger animate__animated" id="cartCount">0</span>
+                    </button>
+                </div>
+                <button class="btn btn-outline-light ms-3 sign-in-btn" data-bs-toggle="modal" data-bs-target="#loginSignupModal">Sign In</button>
+                <button class="btn btn-outline-light ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#rightSidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Right Sidebar -->
+    <div class="offcanvas offcanvas-end sidebar-panel" tabindex="-1" id="rightSidebar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="sidebar-menu">
+                <a href="/Web dev/Ict Website/About_Us.html" class="sidebar-item">
+                    <i class="fas fa-info-circle"></i>
+                    About Us
+                </a>
+                <a href="/Web dev/Ict Website/Contact_Us.html" class="sidebar-item">
+                    <i class="fas fa-envelope"></i>
+                    Contact Us
+                </a>
+                <a href="/Web dev/Ict Website/FAQs.html" class="sidebar-item">
+                    <i class="fas fa-flag"></i>
+                    FAQs
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Carousel -->
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active position-relative">
+                <a href="#featured-products"><img src="/images/Banner1.webp" class="d-block w-100" alt="Featured Products"></a>
+                <div class="carousel-caption featured-slide">
+                    <h1 class="display-3 animated-text">Featured Products</h1>
+                    <p class="lead">Discover Our Latest Collection</p>
+                    <a href="#featured-products" class="btn btn-primary add-to-cart">Explore Now</a>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <a href="#container_pants"><img src="/images/Dress pant 5c.jpg" class="d-block w-100" alt="Dress pant"></a>
+                <div class="carousel-caption featured-slide">
+                    <h1 class="display-3 animated-text">Perfect Fit Dress Pants</h1>
+                    <p class="lead">Comfort meets styles for every occasion.</p>
+                    <a href="#container_pants" class="btn btn-primary add-to-cart">Explore Pants</a>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <a href="#container_shirts"><img src="/images/shirt1a.webp" class="d-block w-100" alt="Dress shirts"></a>
+                <div class="carousel-caption featured-slide">
+                    <h1 class="display-3 animated-text">Elegant Dress Shirts</h1>
+                    <p class="lead">Crafted for a sharp, timeless look.</p>
+                    <a href="#container_shirts" class="btn btn-primary add-to-cart">Explore Shirts</a>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <a href="#container_shoes"><img src="/images/Dress shoe 7e.jpg" class="d-block w-100" alt="Dress shoe"></a>
+                <div class="carousel-caption featured-slide">
+                    <h1 class="display-3 animated-text">Classic Dress Shoes</h1>
+                    <p class="lead">Step into ease which meets your desire.</p>
+                    <a href="#container_shoes" class="btn btn-primary add-to-cart">Explore Shoes</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Featured Products Section -->
+    <section id="featured-products" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5 align-items-center">
+                <div class="col-md-4" data-aos="fade-right">
+                    <h1 class="display-2 section-large-text">SHIRTS</h1>
+                </div>
+                <div class="col-md-8" data-aos="fade-left">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="featured-product-card">
+                                <div class="product-image-container">
+                                    <a href="/Zeeshan webpages/Webpage_default1.html" target="_blank"><img src="/images/shirt1a.webp" alt="Classic Shirt" class="img-fluid"></a>
+                                </div>
+                                <div class="product-details">
+                                    <h3>Classic Shirt</h3>
+                                    <p>Elegant Design</p>
+                                    <button class="btn btn-primary add-to-cart add-to-cart">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="featured-product-card">
+                                <div class="product-image-container">
+                                    <a href="/Zeeshan webpages/Webpage_default2.html" target="_blank"><img src="/images/shirt2a.webp" alt="Modern Shirt" class="img-fluid"></a>
+                                </div>
+                                <div class="product-details">
+                                    <h3>Modern Shirt</h3>
+                                    <p>Comfortable Style</p>
+                                    <button class="btn btn-primary add-to-cart add-to-cart">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Similar sections of Paants and shoes -->
+            <div class="row justify-content-center mb-5 align-items-center">
+                <div class="col-md-4" data-aos="fade-right">
+                    <h2 class="display-2 section-large-text">PANTS</h2>
+                </div>
+                <div class="col-md-8" data-aos="fade-left">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="featured-product-card">
+                                <div class="product-image-container">
+                                    <a href="/Zeeshan webpages/Webpage_default3.html" target="_blank"><img src="/images/Dress pant 1a.jpg" alt="Featured Watch 1" class="img-fluid"></a>
+                                </div>
+                                <div class="product-details">
+                                    <h3>Slim Fit Pants</h3>
+                                    <p>Streamlined style for a modern look.</p>
+                                    <button class="btn btn-primary add-to-cart add-to-cart">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="featured-product-card">
+                                <div class="product-image-container">
+                                    <a href="/Zeeshan webpages/Webpage_default4.html" target="_blank"><img src="/images/Dress pant 2c.jpg" alt = "Featured Watch 2" class="img-fluid"></a>
+                                </div>
+                                <div class="product-details">
+                                    <h3>Classic Fit Pant</h3>
+                                    <p>Timeless comfort with every occasion.</p>
+                                    <button class="btn btn-primary add-to-cart add-to-cart">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row justify-content-center mb-5 align-items-center">
+                <div class="col-md-4" data-aos="fade-right">
+                    <h2 class="display-2 section-large-text">SHOES</h2>
+                </div>
+                <div class="col-md-8" data-aos="fade-left">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="featured-product-card">
+                                <div class="product-image-container">
+                                    <a href="/Zeeshan webpages/Webpage_default5.html" target="_blank"><img src="/images/Dress shoe 1b.jpg" alt="Featured Perfume 1" class="img-fluid"></a>
+                                </div>
+                                <div class="product-details">
+                                    <h3>Classic Leather Shoes</h3>
+                                    <p>Sophistication crafted in every detail.</p>
+                                    <button class="btn btn-primary add-to-cart add-to-cart">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="featured-product-card">
+                                <div class="product-image-container">
+                                    <a href="/Zeeshan webpages/Webpage_default6.html" target="_blank"><img src="/images/Dress shoe 7e.jpg" alt="Featured Perfume 2" class="img-fluid"></a>
+                                </div>
+                                <div class="product-details">
+                                    <h3>Formal Shoes</h3>
+                                    <p>Style that keeps you moving effortlessly.</p>
+                                    <button class="btn btn-primary add-to-cart add-to-cart">Shop Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collections" class="py-5">
+        <!-- Shirts Collection -->
+        <section id="container_shirts">
+            <h2 class="text-center mb-5">Shirts Collection</h2>
+            <div id="shirtsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up">
+                                    <a href="/Zeeshan webpages/Webpage_default7.html" target="_blank"><img src="/images/shirt3a.webp" alt="Shirt 1"></a>
+                                    <div class="card-overlay">
+                                        <h3>Classic White Shirt</h3>
+                                        <p>Rs.7,546</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up" data-aos-delay="100">
+                                    <a href="/Zeeshan webpages/Webpage_default8.html" target="_blank"><img src="/images/shirt4a.webp" alt="Shirt 2"></a>
+                                    <div class="card-overlay">
+                                        <h3>Modern Fit Shirt</h3>
+                                        <p>Rs.6,246</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up" data-aos-delay="200">
+                                    <a href="/Zeeshan webpages/Webpage_default9.html" target="_blank"><img src="/images/shirt5a.webp" alt="Shirt 3"></a>
+                                    <div class="card-overlay">
+                                        <h3>Business Pro Shirt</h3>
+                                        <p>Rs.5,546</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up" data-aos-delay="300">
+                                    <a href="/Zeeshan webpages/Webpage_default10.html" target="_blank"><img src="/images/shirt6a.webp" alt="Shirt 4"></a>
+                                    <div class="card-overlay">
+                                        <h3>Slim Fit Shirt</h3>
+                                        <p>Rs.3,546</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional carousel items... -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#shirtsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#shirtsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+    
+        <!-- Pants Collection (Similar structure, different images and content) -->
+        <section id="container_pants">
+            <h2 class="text-center mb-5">Pants Collection</h2>
+            <div id="pantCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up">
+                                    <a href="/Zeeshan webpages/Webpage_default3.html" target="_blank" target="_blank"><img src="/images/Dress pant 1a.jpg" alt="Pant 1"></a>
+                                    <div class="card-overlay">
+                                        <h3>Classic White Pant</h3>
+                                        <p>Rs.7,546</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up" data-aos-delay="100">
+                                    <a href="/Zeeshan webpages/Webpage_default12.html" target="_blank" target="_blank"><img src="/images/Dress pant 4a.jpg" alt="Pant 2"></a>
+                                    <div class="card-overlay">
+                                        <h3>Modern Fit Pant</h3>
+                                        <p>Rs.7,946</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up" data-aos-delay="200">
+                                    <a href="/Zeeshan webpages/Webpage_default4.html" target="_blank" target="_blank"><img src="/images/Dress pant 2b.jpg" alt="Pant 3"></a>
+                                    <div class="card-overlay">
+                                        <h3>Business Pro Pant</h3>
+                                        <p>Rs.7,636</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up" data-aos-delay="300">
+                                    <a href="/Zeeshan webpages/Webpage_default14.html" target="_blank" target="_blank"><img src="/images/Dress pant 3a.jpg" alt="Pant 4"></a>
+                                    <div class="card-overlay">
+                                        <h3>Slim Fit Pant</h3>
+                                        <p>Rs.7,216</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional carousel items... -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#pantsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#pantsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+         
+        <!-- Shoes Collection (Similar structure, different images and content) -->
+        <section id="container_shoes">
+            <h2 class="text-center mb-5">Shoes Collection</h2>
+            <div id="shoesCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up">
+                                    <a href="/Zeeshan webpages/Webpage_default5.html" target="_blank"><img src="/images/Dress shoe 1c.jpg" alt="Shoes 1"></a>
+                                    <div class="card-overlay">
+                                        <h3>Classic White Shoe</h3>
+                                        <p>Rs.7,236</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up" data-aos-delay="100">
+                                    <a href="/Zeeshan webpages/Webpage_default16.html" target="_blank"><img src="/images/Dress shoe 4a.jpg" alt="Shoes 2"></a>
+                                    <div class="card-overlay">
+                                        <h3>Modern Fit Shoe</h3>
+                                        <p>Rs.6,446</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up" data-aos-delay="200">
+                                    <a href="/Zeeshan webpages/Webpage_default17.html" target="_blank"><img src="/images/Dress shoe 2a.jpg" alt="Shoes 3"></a>
+                                    <div class="card-overlay">
+                                        <h3>Business Pro Shoe</h3>
+                                        <p>Rs.9,546</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="collection-card" data-aos="fade-up" data-aos-delay="300">
+                                    <a href="/Zeeshan webpages/Webpage_default18.html" target="_blank"><img src="/images/Dress shoe 3a.jpg" alt="Shoes 4"></a>
+                                    <div class="card-overlay">
+                                        <h3>Slim Fit Shoe</h3>
+                                        <p>Rs.6,520</p>
+                                        <button class="btn btn-primary add-to-cart add-to-cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional carousel items... -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#shoesCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#shoesCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#featured-products" class="text-white">Featured Products</a></li>
+                        <li><a href="#container_shirts" class="text-white">Shirts</a></li>
+                        <li><a href="#container_pants" class="text-white">Pants</a></li>
+                        <li><a href="#container_shoes" class="text-white">Shoes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: support@fashionmarketplace.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/laamworld/" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/adidasoriginals" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/laamofficial/" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Fashion Marketplace. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login-signUp page -->
+
+<div class="modal fade" id="loginSignupModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content login-container">
+            <div class="modal-body p-4">
+                <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                <p>Please choose an option to continue</p>
+                
+                <div class="buttons mt-4">
+                    <button class="btn btn-primary" onclick="showLogin()">Login</button>
+                    <button class="btn btn-primary" onclick="showSignup()">Signup</button>
+                </div>
+                
+                <form id="loginForm" class="form mt-4">
+                    <h3>Login</h3>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Login</button>
+                </form>
+                
+                <form id="signupForm" class="form mt-4 hidden">
+                    <h3>Signup</h3>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupPassword" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Signup</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Functions to toggle forms (Login and Signup)
+        function showLogin() {
+          document.getElementById('loginForm').classList.remove('hidden');
+          document.getElementById('signupForm').classList.add('hidden');
+        }
+    
+        function showSignup() {
+          document.getElementById('signupForm').classList.remove('hidden');
+          document.getElementById('loginForm').classList.add('hidden');
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #223d50, #144e2c);
+            min-height: 100vh;
+            padding: 2rem;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-container {
+            background: rgba(255,255,255,0.5);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 2rem auto 0;
+        }
+        .Linking{
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find quick answers to common questions</p>
+        </header>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">How to Report on any of your service?</div>
+                <div class="faq-answer">
+                    Just go the the Top-Right of the Navbar, press the Side-bar button, and go to the Contact Us Option. Or you could just click the below given button. 
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What payment methods do you accept?</div>
+                <div class="faq-answer">
+                    We accept all major credit cards (Visa, MasterCard), PayPal, all Online payment servies, and All payment Waallets. All payments are processed securely through our encrypted payment system.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Could we bargain on the price?</div>
+                <div class="faq-answer">
+                    The Price entered on the Website are the pixed price, which is not bargainable..
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is your return policy?</div>
+                <div class="faq-answer">
+                    We offer a 30-day return policy for all unused items in their original packaging. Contact our customer service team, from 'Contact Us' to initiate a return, and we'll provide you with a return shipping label.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How can I contact customer support?</div>
+                <div class="faq-answer">
+                    Our customer support team is available 24/7. You can reach us through email at support@example.com, live chat on our website, or call us at 1-800-EXAMPLE. We typically respond to all inquiries within 24 hours.
+                </div>
+            </div>
+        </div>
+
+        <a class="Linking" href="/Web dev/Ict Website/Contact_Us.html"><button class="btn">Still have questions? Contact Us</button></a>
+    </div>
+
+    <script>
+        // Toggle FAQ answers
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

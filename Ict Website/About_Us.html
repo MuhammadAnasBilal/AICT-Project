@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #223d50, #144e2c);
+            min-height: 100vh;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.5);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: black;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .team-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background: rgba(255,255,255,0.5);
+            border-radius: 15px;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .team-member:hover{
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        #CEO:hover{
+            box-shadow: 0 15px 30px rgba(1,1,1,0.9);
+        }
+        .team-member img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: fill;
+        }
+
+        .team-member h4 {
+            color: black;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            color: black;
+            font-size: 0.9em;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>About Us</h1>
+            <p>We started this journey with a simple idea: to make shopping for dress pants, dress shirts, and dress shoes effortless and enjoyable. Our passion for quality and style drives everything we do.
+
+                At [Dress.], we believe everyone deserves to feel confident and comfortable in what they wear. That's why we are committed to offering handpicked collections that combine timeless designs with modern trends—all at prices that make sense.</p>
+        </header>
+
+        <div class="cards-container">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>At [Dress.], our mission is to make shopping for stylish, high-quality dresswear effortless. We offer timeless designs that blend comfort, confidence, and value—helping you look and feel your best, every day.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>At [Dress.], our vision is to be a corner-stone for stylish, high-quality dresswear that helps individuals feel confident and comfortable. We aim to make it effortless to dress for any occasion, offering versatile pieces that with modern trends.</p>
+                <a href="#" class="btn">Our Goals</a>
+            </div>
+            <div class="card">
+                <h3>Our Values</h3>
+                <p>At [Dress.], we value quality, style, and customer satisfaction. We're dedicated to offering timeless, comfortable pieces that empower you to feel your best, with a focus on integrity and exceeding expectations.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="/images/Onwer2.jpg" alt="Team Member">
+                    <h4>Abdullah Khalid Qureshi</h4>
+                    <p>Creative Director</p>
+                </div>
+                <div class="team-member" id="CEO">
+                    <img src="/images/CEO.jpg" alt="Team Member">
+                    <h4>Muhammad Anas Bilal</h4>
+                    <p>CEO & Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="/images/Onwer1.jpg" alt="Team Member">
+                    <h4>Zeeshan Athar</h4>
+                    <p>Tech Lead</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            const teamMembers = document.querySelectorAll('.team-member');
+            
+            // Animate cards
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.animation = 'fadeInUp 0.8s forwards';
+                }, 200 * index);
+            });
+
+            // Animate team members
+            teamMembers.forEach((member, index) => {
+                setTimeout(() => {
+                    member.style.animation = 'fadeInUp 0.8s forwards';
+                }, 200 * index);
+            });
+        });
+    </script>
+</body>
+</html>
