@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodauct WebPage</title>
+    <link rel="stylesheet" href="Webpage_default.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <!-- Left: Featured Products -->
+        <ul>
+            <li><a href="#">Featured Products</a></li>
+            <li><a href="#">Shirts</a></li>
+            <li><a href="#">Watches</a></li>
+            <li><a href="#">Perfumes</a></li>
+        </ul>
+
+        <!-- Center: Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+
+        <!-- Right: Login / Sign Up -->
+        <a href="#" class="login">Login / Sign Up</a>
+    </div>
+    <div class="container">
+        <!-- Product Section -->
+        <div class="product-section">
+            <div class="product-images">
+                <img id="mainImage" src="/images/Dress shoe 3a.jpg" alt="Product">
+                <div class="thumbnail-container">
+                    <img src="/images/Dress shoe 3b.jpg" onclick="changeImage(this.src)" alt="Thumbnail 1">
+                    <img src="/images/Dress shoe 3c.jpg" onclick="changeImage(this.src)" alt="Thumbnail 2">
+                    <img src="/images/Dress shoe 3d.jpg" onclick="changeImage(this.src)" alt="Thumbnail 3">
+                    <img src="/images/Dress shoe 6b.jpg" onclick="changeImage(this.src)" alt="Thumbnail 4">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>Experience Ultimate Sophistication with Premium Patent Leather Formals</h1>
+                <div class="price">Rs. 8,488</div>
+                <div class="options">
+                    <label for="color">Color Family:</label>
+                    <select id="color">
+                        <option value="gray">gray</option>
+                        <option value="Phantom Black">Phantom Black</option>
+                        <option value="dark yellow">Dark Yellow</option>
+                        <option value="Cream">Cream</option>
+                        <option value="light Blue">Light blue</option>
+                        <option value="Dark Black">Dark Black</option>
+
+                    </select>
+                    <br><br>
+                    <label for="Size">Size:</label>
+                    <select id="size">
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="Extra Large">Extra large</option>
+                        <option value="Double Extra Large">Double Extra Large</option>
+                    </select>
+                </div>
+                <div class="quantity-controls">
+                    <label for="quantity">Quantity:</label>
+                    <button onclick="changeQuantity(-1)">-</button>
+                    <input type="text" id="quantity" value="1" readonly>
+                    <button onclick="changeQuantity(1)">+</button>
+                </div>
+                <div class="buttons">
+                    <button class="buy-now" onclick="buyNow()">Buy Now</button>
+                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="description">
+            <h4>Product Description:</h4>
+            <p>
+                Product details of Next Men's T-Shirt - Newquay Graphic: Coastal Style With Modern Comfort
+            </p>
+            <ul>
+                <li>48% Cotton, 52% Polyester</li>
+                <li>Wash inside out,</li>
+                <li>Iron on reverse</li>
+                <li>Collar: O-Neak</li>
+                <li>Sleeve Lenght(cm):Short</li>
+                <li>Line dry</li>
+            
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const basePrice = 488999;
+        const quantityInput = document.getElementById('quantity');
+
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+
+        function changeQuantity(change) {
+            let quantity = parseInt(quantityInput.value) + change;
+
+            // Ensure quantity is at least 1
+            if (quantity < 1) {
+                quantity = 1;
+            }
+
+            quantityInput.value = quantity;
+        }
+
+        function buyNow() {
+            alert("Proceeding to buy the product!");
+        }
+
+        function addToCart() {
+            const quantity = quantityInput.value;
+            const color = document.getElementById('color').value;
+            const storage = document.getElementById('storage').value;
+
+            alert(`Added ${quantity}x ${color}, ${storage} to cart!`);
+        }
+    </script>
+     <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <a href="Webpage_default6.html"><img src="/images/Dress shoe 7e.jpg" alt="Product 2"></a>
+            <h3>Signature Black Dress Shoes | Professional Collection</h3>
+            <p class="price">Rs. 7,799</p>
+<a href="Webpage_default6.html"><button class="view_detail_btn">View Details</button></a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <a href="Webpage_default5.html"><img src="/images/Dress shoe 1c.jpg" alt="Product 2"></a>
+            <h3>Classic Brown Oxford Casuals - Modern Lifestyle Collection</h3>
+            <p class="price">Rs. 4,773</p>
+<a href="Webpage_default5.html"><button class="view_detail_btn">View Details</button></a>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <a href="Webpage_default17.html"><img src="/images/Dress shoe 2a.jpg" alt="Product 2"></a>
+            <h3>Experience Refined Craftsmanship in Our Black Leather Dress Brogues</h3>
+            <p class="price">Rs. 2,343</p>
+<a href="Webpage_default17.html"><button class="view_detail_btn">View Details</button></a>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <a href="Webpage_default16.html"><img src="/images/Dress shoe 4a.jpg" alt="Product 2"></a>
+            <h3>Make Every Step Count in Our Handcrafted Brown Oxford Collection</h3>
+            <p class="price">Rs. 1,234</p>
+<a href="Webpage_default16.html"><button class="view_detail_btn">View Details</button></a>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer">
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#">Featured Products</a>
+            <a href="#">Shirts</a>
+            <a href="#">Watches</a>
+            <a href="#">Perfumes</a>
+        </div>
+        <div>
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:support@fashionmarketplace.com">support@fashionmarketplace.com</a></p>
+            <p>Phone: +1 (555) 123-4567</p>
+        </div>
+        <div>
+            <h3>Follow Us</h3>
+            <span>Facebook</span>
+            <span>Twitter</span>
+            <span>Instagram</span>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        © 2024 Fashion Marketplace. All Rights Reserved.
+    </div>
+
+</body>
+</html>
